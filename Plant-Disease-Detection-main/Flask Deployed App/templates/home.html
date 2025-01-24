@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block pagetitle %}FasalSathi - Home{% endblock pagetitle %}
+
+{% block body %}
+    <!-- Hero Section -->
+    <section class="hero text-center py-5">
+        <h1 class="display-4">Welcome to FasalSathi</h1>
+        <p class="lead">Your trusted AI partner in crop disease prediction.</p>
+        <a href="/submit" class="btn btn-success btn-lg mt-4">Scan Your Crop</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <h3>AI-Powered Prediction</h3>
+                    <p>Analyze your crops in real-time with our AI-powered engine.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3>Simple & Easy</h3>
+                    <p>Upload crop images, get results, and find solutions in no time.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3>Community Support</h3>
+                    <p>Connect with experts and fellow farmers for advice and solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

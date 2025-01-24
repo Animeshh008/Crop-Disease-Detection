@@ -1,0 +1,30 @@
+function uploadImage() {
+    const fileInput = document.getElementById('cropImage');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        document.getElementById('scanResult').textContent = 'Please select an image to upload.';
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('image', file);
+
+    // Perform the fetch request to submit the image
+    fetch('/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())  // Change to .json() if returning JSON from backend
+    .then(data => {
+        console.log('Response received:', data);
+        document.getElementById('scanResult').textContent = 'Prediction result received.';
+        // Optionally, display the prediction result dynamically
+        document.body.innerHTML = data;  // Replace the current body with the prediction result (e.g. submit.html)
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('scanResult').textContent = 'Error during submission.';
+    });
+}
+
